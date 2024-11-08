@@ -1,0 +1,21 @@
+options:
+  - virtualnet: 'ajnet:login'
+  - bridge: "login iface:em0"
+  - mount_devfs:
+  - devfs_ruleset: 10
+  - dhcp: sb_login
+
+services:
+  login:
+    makejail: gh+shen390s/login
+    name: login
+    arguments:
+      - login_tag: 14.1
+    volumes:
+      - home: home
+
+volumes:
+  home: 
+    device: /data/home
+    type: <volumefs>
+  

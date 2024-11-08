@@ -1,0 +1,6 @@
+ARG login_tag=14.1
+
+FROM --entrypoint gh+shen390s/login 
+
+SYSRC sshd_enable=YES
+SERVICE sshd start
